@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="Board interface">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Board9.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="Board interface + Player class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +58,19 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1664454125080</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Board interface + Player class">
+      <created>1664460252031</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1664460252031</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Board interface + Player class">
+      <created>1664460406347</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1664460406347</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +87,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Board interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board interface" />
+    <MESSAGE value="Board interface + Player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Board interface + Player class" />
   </component>
 </project>
