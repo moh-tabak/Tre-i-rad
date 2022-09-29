@@ -2,7 +2,10 @@ public class Player {
     private String name;
     private int score;
 
-    Player(){}
+    Player(){
+        this.name = "";
+        this.score = 0;
+    }
 
     public Player(String name, int score) {
         this.name = name;
