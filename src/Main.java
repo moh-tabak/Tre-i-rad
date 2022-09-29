@@ -130,10 +130,12 @@ public class Main {
                 //check if there's a winner
                 if(board.getWinner() > 0){
                     matchEnded=true;
+                    break;
                 }
                 //Check if there's any winnable lines left
                 if(board.countWinnableLines() == 0){
                     matchEnded=true;
+                    break;
                 }
                 //Flip whoseTurn between 1 and 2
                 if(whoseTurn==1)
