@@ -1,6 +1,6 @@
 public class Board9 implements Board {
     private int[][] squares = new int [3][3];
-
+    private int totalPlays = 0;
     public char getSymbol(int player){
         switch (player){
             case 1:
@@ -43,11 +43,12 @@ public class Board9 implements Board {
     @Override
     public void play(int player, int x, int y) {
         squares[x][y] = player;
+        totalPlays++;
     }
 
     @Override
-    public int countWinnableLines() {
-        return 8;
+    public int getTotalPlays() {
+        return totalPlays;
     }
 
     @Override
@@ -104,5 +105,15 @@ public class Board9 implements Board {
                     return playFound;
         }
         return 0;
+    }
+
+    @Override
+    public void resetBoard() {
+        for(int x = 0; x < 3 ; x++){
+            for(int y = 0; y < 3; y++){
+                squares[x][y]=0;
+            }
+        }
+        totalPlays = 0;
     }
 }

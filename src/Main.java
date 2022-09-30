@@ -2,12 +2,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner =new Scanner(System.in);
-    private static Player[] players = new Player[3];
-    private  static Board9 board = new Board9();
+    private final static Scanner scanner =new Scanner(System.in);
+    private final static Player[] players = new Player[3];
+    private final static Board9 board = new Board9();
 
     public static void main(String[] args) {
-        int choice = 0;
         //Main loop
         while (true){
             System.out.println(" ");
@@ -32,9 +31,10 @@ public class Main {
         }
     }
 
+    //The menu should always start with 1
     private static int readChoice(int numberOfChoices){
-        int choice = 0;
-        while(choice == 0){
+        int choice;
+        while(true){
             if(scanner.hasNextInt()){
                 choice = scanner.nextInt();
                 if (choice > 0 && choice <= numberOfChoices){
@@ -42,8 +42,6 @@ public class Main {
                     return choice;
                 }
                 else{
-                    //Reset choice to stay in the loop
-                    choice = 0;
                     scanner.nextLine();
                 }
             }
@@ -51,7 +49,6 @@ public class Main {
                 scanner.nextLine();
             }
         }
-       return -1;
     }
 
     private static String readName(int player){
@@ -114,12 +111,11 @@ public class Main {
     }
 
     private static void matchWithHuman(){
-        int whoseTurn =  new Random().nextInt(1, 3);;
-        int theWinner = 0;
-        boolean matchEnded =false;
+        int whoseTurn =  new Random().nextInt(1, 3);
+        int theWinner;
         //Rematch loop
         while (true){
-            board = new Board9();
+            board.resetBoard();
             System.out.println("Mynt kastades... " + players[whoseTurn].getName() + " börjar fö1rst!");
             board.render();
             System.out.println("Välj en ruta genom att skriva bokstaven och sifran (t.ex. b2 )");
@@ -135,8 +131,9 @@ public class Main {
                     System.out.println("\\****>>  " + players[theWinner].getName() + " vann!  <<****/");
                     break;
                 }
-                //Check if there's any winnable lines left
-                if(board.countWinnableLines() == 0){
+                //Check if there's any playable squares left
+                if(board.getTotalPlays() == 9){
+                    System.out.println("*****<<  Oavgjort!  >>*****");
                     break;
                 }
                 //Flip whoseTurn between 1 and 2

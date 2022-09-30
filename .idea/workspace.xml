@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="matchWithHuman nearly done + fixed render">
+    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="getWinner and fixed score board">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -91,7 +93,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1664487326794</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="getWinner and fixed score board">
+      <created>1664557403252</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1664557403252</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +120,7 @@
     <MESSAGE value="Render method" />
     <MESSAGE value="matchWithHuman nearly done" />
     <MESSAGE value="matchWithHuman nearly done + fixed render" />
-    <option name="LAST_COMMIT_MESSAGE" value="matchWithHuman nearly done + fixed render" />
+    <MESSAGE value="getWinner and fixed score board" />
+    <option name="LAST_COMMIT_MESSAGE" value="getWinner and fixed score board" />
   </component>
 </project>
