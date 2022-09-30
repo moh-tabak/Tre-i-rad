@@ -3,12 +3,10 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner =new Scanner(System.in);
-
     private static Player[] players = new Player[3];
-    private  static Board9 board;
+    private  static Board9 board = new Board9();
 
     public static void main(String[] args) {
-        board = new Board9();
         int choice = 0;
         //Main loop
         while (true){
@@ -102,39 +100,43 @@ public class Main {
                         coordinates[1] = 2;
                         break;
                 }
-                if(conditionsMet<2) System.out.println("Ogiltiga Koordinater!");
+                if(conditionsMet == 2) {
+                    //check if the square is already played
+                    if (board.isSquareAvailable(coordinates[0], coordinates[1])) {
+                        conditionsMet++;
+                    } else {
+                        System.out.println("Välj en ledig ruta!");
+                    }
+                }else System.out.println("Ogiltiga Koordinater!");
             }else System.out.println("Ange Koordinater!");
-            //check if square is already played
-            if(board.isSquareAvailable(coordinates[0],coordinates[1])) {
-                conditionsMet++;
-            }else{
-                System.out.println("Välj en ledig ruta!");
-            }
         }
         return coordinates;
     }
 
     private static void matchWithHuman(){
         int whoseTurn =  new Random().nextInt(1, 3);;
+        int theWinner = 0;
         boolean matchEnded =false;
         //Rematch loop
         while (true){
-            System.out.println("Mynt kastades... " + players[whoseTurn].getName() + " börjar först!");
+            board = new Board9();
+            System.out.println("Mynt kastades... " + players[whoseTurn].getName() + " börjar fö1rst!");
             board.render();
             System.out.println("Välj en ruta genom att skriva bokstaven och sifran (t.ex. b2 )");
             //Players' turn loop
-            while (!matchEnded){
+            while (true){
                 int[] coords = readSquare(); //index 0 is X , index 1 is Y
                 board.play(whoseTurn, coords[0], coords[1]);
                 board.render();
                 //check if there's a winner
-                if(board.getWinner() > 0){
-                    matchEnded=true;
+                theWinner = board.getWinner();
+                if(theWinner > 0){
+                    players[theWinner].setScore(players[theWinner].getScore() + 1);
+                    System.out.println("\\****>>  " + players[theWinner].getName() + " vann!  <<****/");
                     break;
                 }
                 //Check if there's any winnable lines left
                 if(board.countWinnableLines() == 0){
-                    matchEnded=true;
                     break;
                 }
                 //Flip whoseTurn between 1 and 2
@@ -144,7 +146,12 @@ public class Main {
                     whoseTurn =1;
                 System.out.println(players[whoseTurn].getName() + "s tur. Vilken ruta?");
             }
-
+            //Show score
+            System.out.println("Poängställning:");
+            System.out.println(players[1].getName() +" : " + players[1].getScore());
+            System.out.println(players[2].getName() +" : " + players[2].getScore());
+            System.out.println("___________________________________");
+            //Ask for rematch
             System.out.println("Spela en gång till?");
             System.out.println("[1] Ja");
             System.out.println("[2] Tillbake till huvudmenyn");
@@ -152,10 +159,6 @@ public class Main {
                 System.out.println("___________________________________");
                 break;
             }
-            System.out.println("Poängställning:");
-            System.out.println(players[0].getName() +" : " + players[0].getScore());
-            System.out.println(players[1].getName() +" : " + players[1].getScore());
-            System.out.println("___________________________________");
         }
     }
 

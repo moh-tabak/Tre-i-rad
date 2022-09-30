@@ -28,7 +28,7 @@ public class Board9 implements Board {
             }
             System.out.print(System.lineSeparator());
             if (y<2) {
-            System.out.println("   –––+–––+–––");
+            System.out.println("   ---+---+---");
             }
         }
         System.out.println("");
@@ -52,6 +52,57 @@ public class Board9 implements Board {
 
     @Override
     public int getWinner() {
+        int playFound;
+        //check for a vertical win
+        for(int x1=0; x1<3 ; x1++) {
+            playFound = 0;
+            for (int y1 = 0; y1 < 3; y1++) {
+                if (squares[x1][y1] == 0) break;
+                if (playFound == 0)
+                    playFound = squares[x1][y1];
+                else {
+                    if (squares[x1][y1] == playFound) {
+                        if (y1 == 2) {
+                            return playFound;
+                        }
+                    }
+                    else{
+                        //break out if the play doesn't belong to the same player
+                        break;
+                    }
+                }
+            }
+        }
+        //check for a horizontal win
+        for(int y2=0; y2<3 ; y2++){
+            playFound = 0;
+            for (int x2=0; x2<3; x2++){
+                if(squares[x2][y2]==0) break;
+                if (playFound == 0)
+                    playFound = squares[x2][y2];
+                else{
+                    if(squares[x2][y2] == playFound){
+                        if(x2==2){
+                            return playFound;
+                        }
+                    }
+                    else{
+                        //break out if the play doesn't belong to the same player
+                        break;
+                    }
+                }
+            }
+        }
+        //check for a diagonal win
+        if(squares[1][1] != 0){
+            playFound = squares[1][1];
+            if(squares[0][0] == playFound)
+                if(squares[2][2] == playFound)
+                    return playFound;
+            if(squares[0][2] == playFound)
+                if(squares[2][0] == playFound)
+                    return playFound;
+        }
         return 0;
     }
 }
