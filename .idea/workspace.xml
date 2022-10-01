@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="Match with computer + exit option">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="d7855a65-e2bb-48b5-962f-e751de5ea1b5" name="Changes" comment="Reduced code repetition: added flipTurns and showScore functions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +105,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1664633336763</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Reduced code repetition: added flipTurns and showScore functions">
+      <created>1664634288285</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1664634288285</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,7 +135,8 @@
     <MESSAGE value="getWinner and fixed score board" />
     <MESSAGE value="Player vs player mode is finished" />
     <MESSAGE value="Match with computer + exit option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Match with computer + exit option" />
+    <MESSAGE value="Reduced code repetition: added flipTurns and showScore functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reduced code repetition: added flipTurns and showScore functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

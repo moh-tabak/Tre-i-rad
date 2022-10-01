@@ -1,19 +1,15 @@
 public class Board9 implements Board {
-    private int[][] squares = new int [3][3];
+    private final int[][] squares = new int [3][3];
     private int totalPlays = 0;
     public char getSymbol(int player){
-        switch (player){
-            case 1:
-                return 'X';
-            case 2:
-                return 'O';
-            default:
-                return ' ';
-        }
+        return switch (player) {
+            case 1 -> 'X';
+            case 2 -> 'O';
+            default -> ' ';
+        };
     }
     @Override
     public void render() {
-        String line;
         for(int y = 0; y<3 ; y++){
             if(y==0){
                 //Write column names
@@ -31,13 +27,12 @@ public class Board9 implements Board {
             System.out.println("   ---+---+---");
             }
         }
-        System.out.println("");
+        System.out.println();
     }
 
     @Override
     public boolean isSquareAvailable(int x, int y) {
-        if(squares[x][y] == 0) return true;
-        return false;
+        return squares[x][y] == 0;
     }
 
     @Override
