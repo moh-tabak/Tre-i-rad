@@ -118,6 +118,20 @@ public class Main {
         return coordinates;
     }
 
+    private static int flipTurns(int turnToFlip){
+        if(turnToFlip==1)
+            return  2;
+        else
+            return 1;
+    }
+
+    private static void showScore(){
+        System.out.println("Poängställning:");
+        System.out.println(players[1].getName() +" : " + players[1].getScore());
+        System.out.println(players[2].getName() +" : " + players[2].getScore());
+        System.out.println("___________________________________");
+    }
+
     private static void matchWithHuman(){
         int whoseTurn;
         int theWinner;
@@ -145,18 +159,11 @@ public class Main {
                     System.out.println("*****<<  Oavgjort!  >>*****");
                     break;
                 }
-                //Flip whoseTurn between 1 and 2
-                if(whoseTurn==1)
-                    whoseTurn = 2;
-                else
-                    whoseTurn =1;
+                whoseTurn=flipTurns(whoseTurn);
+                //Next player's turn
                 System.out.println(players[whoseTurn].getName() + "s tur. Vilken ruta?");
             }
-            //Show score
-            System.out.println("Poängställning:");
-            System.out.println(players[1].getName() +" : " + players[1].getScore());
-            System.out.println(players[2].getName() +" : " + players[2].getScore());
-            System.out.println("___________________________________");
+            showScore();
             //Ask for rematch
             System.out.println("Spela en gång till?");
             System.out.println("[1] Ja");
@@ -231,17 +238,9 @@ public class Main {
                     System.out.println("*****<<  Oavgjort!  >>*****");
                     break;
                 }
-                //Flip whoseTurn between 1 and 2
-                if(whoseTurn==1)
-                    whoseTurn = 2;
-                else
-                    whoseTurn =1;
+                whoseTurn=flipTurns(whoseTurn);
             }
-            //Show score
-            System.out.println("Poängställning:");
-            System.out.println(players[1].getName() +" : " + players[1].getScore());
-            System.out.println(players[2].getName() +" : " + players[2].getScore());
-            System.out.println("___________________________________");
+            showScore();
             //Ask for rematch
             System.out.println("Spela en gång till?");
             System.out.println("[1] Ja");
